@@ -1,0 +1,648 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f3f1f1;
+    color: #333;
+    padding-top: 60px; /* Offset for the fixed navbar */
+}
+
+/* Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #5a2a3a; /* Dark burgundy */
+    padding: 10px 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-list li {
+    margin: 0 25px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.nav-list a:hover {
+    background-color: #e8a6c3; /* Light blush pink hover */
+    color: #5a2a3a;
+    transform: scale(1.05);
+}
+
+/* Scroll effect */
+.scrolled {
+    background-color: #4e2133; /* Darker burgundy when scrolled */
+}
+
+/* Hero Section Styling */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #f1d8d1; /* Light warm beige */
+    color: #5a2a3a;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 500px;
+    padding: 20px;
+    text-align: left; /* Align text to the left */
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.hero-images {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.hero-img {
+    width: 48%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile responsiveness for hero section */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-images {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .hero-img {
+        width: 80%;
+        margin-bottom: 15px;
+    }
+
+    .hero-text {
+        text-align: center; /* Center text for mobile */
+    }
+}
+
+/* Content Section Styling */
+.content-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #fff;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.content-section h2 {
+    font-size: 2.5rem;
+    color: #5a2a3a;
+    margin-bottom: 15px;
+}
+
+.content-section p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Book item */
+.book-item {
+    background-color: #f7f0e1;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.book-item h3 {
+    font-size: 2rem;
+    color: #5a2a3a;
+}
+
+.book-item p {
+    font-size: 1rem;
+    color: #444;
+}
+
+/* Genres Section Styling */
+#genres {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f7f2f2; /* Soft light background for genres section */
+    color: #5a2a3a;
+}
+
+#genres h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #5a2a3a;
+}
+
+#genres p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.genre-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.genre-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 350px;
+    text-align: left;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.genre-card:hover {
+    transform: translateY(-10px); /* Slight hover effect */
+}
+
+.genre-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #5a2a3a;
+}
+
+.genre-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.genre-card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Mobile responsiveness for genres */
+@media (max-width: 768px) {
+    #genres {
+        padding: 40px 15px;
+    }
+
+    .genre-cards {
+        grid-template-columns: 1fr; /* Stack cards vertically on mobile */
+    }
+}
+
+/* Book Reviews Section Styling */
+#book-reviews {
+    padding: 60px 20px;
+    background-color: #f7f2f2; /* Light soft background color */
+    text-align: center;
+    color: #5a2a3a;
+}
+
+#book-reviews h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #5a2a3a;
+}
+
+#book-reviews p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Review Cards Container - 2x2 Grid Layout */
+.review-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px;
+    justify-items: center; /* Center content */
+}
+
+.review-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-10px); /* Hover effect */
+}
+
+/* Review Image */
+.review-img-container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.review-img {
+    width: 100%; /* Fill container width */
+    height: auto; /* Adjust height proportionally */
+    object-fit: cover;
+    border-radius: 10px 10px 0 0; /* Rounded corners */
+}
+
+/* Review Text */
+.review-text {
+    padding: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.review-text h3 {
+    font-size: 1.6rem;
+    color: #5a2a3a;
+    margin-bottom: 10px;
+}
+
+.review-text p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Mobile responsiveness for reviews */
+@media (max-width: 768px) {
+    .review-cards {
+        grid-template-columns: 1fr; /* Stack cards vertically on mobile */
+    }
+
+    .review-card {
+        width: 100%;
+    }
+
+    .review-img-container {
+        height: 250px; /* Adjust height for mobile */
+    }
+
+    .review-img {
+        object-fit: cover;
+    }
+
+    .review-text {
+        width: 100%;
+    }
+}
+
+/* Best Sellers Section Styling */
+#bestsellers {
+    padding: 60px 20px;
+    background-color: #f8f8f8; /* Light background color */
+    text-align: center;
+    color: #333;
+}
+
+#bestsellers h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #5a2a3a;
+}
+
+#bestsellers p {
+    font-size: 1.2rem;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+/* Best Sellers Grid Layout */
+.bestsellers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on larger screens */
+    gap: 30px;
+    justify-items: center; /* Center grid items */
+    margin-top: 40px;
+}
+
+.bestseller-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 700px; /* Allow cards to be wider */
+    display: flex;
+    flex-direction: row; /* Align image and text horizontally */
+    transition: transform 0.3s ease;
+}
+
+.bestseller-card:hover {
+    transform: translateY(-10px); /* Hover effect */
+}
+
+.bestseller-img-container {
+    width: 40%; /* Image takes up 40% of the card width */
+    padding: 10px;
+}
+
+.bestseller-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px; /* Rounded corners for the image */
+}
+
+.bestseller-info {
+    width: 60%; /* Text takes up 60% of the card width */
+    padding: 20px;
+    text-align: left;
+}
+
+.bestseller-info h3 {
+    font-size: 1.6rem;
+    color: #5a2a3a;
+    margin-bottom: 10px;
+}
+
+.bestseller-info p {
+    font-size: 1.2rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+/* Mobile responsiveness for bestsellers */
+@media (max-width: 768px) {
+    .bestsellers-grid {
+        grid-template-columns: 1fr; /* Stack bestsellers vertically on mobile */
+    }
+
+    .bestseller-card {
+        width: 90%; /* Make the card smaller on mobile */
+        flex-direction: column; /* Stack image and text vertically */
+    }
+
+    .bestseller-img-container {
+        width: 100%; /* Image takes full width on mobile */
+        height: 300px; /* Fixed height for mobile */
+    }
+
+    .bestseller-info {
+        width: 100%; /* Text takes full width on mobile */
+    }
+}
+/* Contact Section Styling */
+#contact {
+    padding: 60px 20px;
+    background-color: #f1d8d1; /* Soft light peach background for contact section */
+    text-align: center;
+    color: #5a2a3a;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #5a2a3a;
+}
+
+#contact p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Contact Section Styling */
+#contact {
+    padding: 80px 20px;
+    background-color: #f9f9f9; /* Soft background for the contact section */
+    text-align: center;
+    color: #5a2a3a; /* Dark burgundy color for the text */
+    margin-top: 50px; /* Spacing from other sections */
+}
+
+/* Contact Section Heading */
+#contact h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #5a2a3a; /* Same dark burgundy color */
+    font-weight: 700;
+}
+
+/* Contact Section Paragraph */
+#contact p {
+    font-size: 1.2rem;
+    color: #777; /* Light gray text for the description */
+    margin-bottom: 40px;
+}
+
+/* Contact Section Container (Flex Layout) */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    margin-top: 40px;
+}
+
+/* Contact Details Styling */
+.contact-details {
+    flex: 1;
+    min-width: 300px; /* Ensures enough space for text on smaller screens */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.contact-details h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #5a2a3a;
+}
+
+.contact-details p {
+    font-size: 1.1rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+/* Contact Form Styling */
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #5a2a3a;
+}
+
+/* Input and Textarea Styling */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Rounded corners for inputs */
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+/* Input Focus Effect */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #5a2a3a; /* Dark burgundy border on focus */
+    outline: none;
+}
+
+/* Contact Form Button Styling */
+.contact-form button {
+    background-color: #5a2a3a; /* Dark burgundy background */
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    width: 100%; /* Full width button */
+    margin-top: 20px; /* Space above the button */
+}
+
+/* Hover Effect for Contact Form Button */
+.contact-form button:hover {
+    background-color: #e8a6c3; /* Light blush pink */
+    transform: translateY(-3px); /* Slight lift effect */
+    color: #5a2a3a; /* Text color changes to dark burgundy */
+}
+
+/* Mobile Responsiveness for Contact Section */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        align-items: center;
+    }
+
+    .contact-details,
+    .contact-form {
+        width: 100%; /* Ensure full-width on mobile */
+        max-width: 500px; /* Set max-width for better readability */
+    }
+
+    /* Adjust the spacing between form elements for mobile */
+    .contact-form input,
+    .contact-form textarea {
+        margin-bottom: 15px;
+    }
+
+    /* Adjust button padding and font size on smaller screens */
+    .contact-form button {
+        font-size: 1rem;
+        padding: 10px 25px;
+    }
+}
+
+/* Footer Styling */
+footer {
+    background-color: #5a2a3a; /* Dark burgundy for footer */
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    margin-top: 40px;
+    font-size: 1rem;
+}
+
+footer h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+footer p {
+    font-size: 1.1rem;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+footer a {
+    color: #e8a6c3; /* Light blush pink for links */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #fff; /* White color on hover for better visibility */
+}
+
+/* Mobile responsiveness for footer */
+@media (max-width: 768px) {
+    footer {
+        padding: 20px 15px;
+    }
+
+    footer p {
+        font-size: 1rem;
+    }
+}
